@@ -1,0 +1,103 @@
+:root {
+    --text: azure;
+    --bg: hsla(240,56%,9%,.6);
+    --bg-dark: hsla(235,50%,36%,.8);
+    --bg-light: hsla(230,72%,80%,.7);
+    --submit: rgb(10,180,75);
+  }
+  body {
+    margin:0;
+    margin-bottom: 8px;
+    padding:0;
+    font-family: Tahoma, sans-serif;
+    font-size: 21px;
+    color: var(--text);
+    background-image: linear-gradient(120deg,var(--bg-dark),var(--bg-light)), url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+    background-size: cover;
+    background-position: center;
+  }
+  #title {
+    margin: 50px 10px 10px 10px;
+    text-align: center;
+    font-weight: 200;
+  }
+  #description {
+    margin: auto;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 100;
+    font-style: italic;
+  }
+  .container {
+    width: 60%;
+    margin: auto;
+    min-width: 400px;
+    max-width: 650px;
+    background: var(--bg);
+    border-radius: 2px;
+    width: 70vw;
+  }
+  #survey-form {
+    padding: 30px;
+    border: none;
+    border-radius: 2px;
+  }
+  fieldset {
+    border: none;
+  }
+  label {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+  }
+  #small {
+    display: inline;
+    font-size: .75em;
+  }
+  #dropdown {
+    border-radius: 3px;
+    color: grey;
+    font-size: 1em;
+  }
+  .title-label {
+    margin-top: 5px;
+    margin-bottom: 25px;
+  }
+  input, textarea, select {
+    margin: 5px auto;
+    width: 100%;
+    min-height: 2em;
+    font-weight: 200;
+    text-indent: 10px;
+  }
+  input {
+    border-radius: 5px;
+    font-size: inherit;
+    text-indent: 10px;
+  }
+  .inline {
+    width: unset;
+    margin: .01em;
+    vertical-align: middle;
+  }
+  input[type="radio"], input[type="checkbox"] {
+    min-height: 1.25rem;
+    min-width: 1.25rem;
+  }
+  textarea {
+    border-radius: 0px;
+    padding: 10px;
+    font-size: inherit;
+  }
+  .textarea {
+    padding-top: 25px;
+  }
+  input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    background-color: var(--submit);
+    color: azure;
+    border: none;
+    border-radius: 2px;
+  }
