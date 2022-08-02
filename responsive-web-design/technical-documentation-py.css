@@ -10,8 +10,11 @@
     --bg2: #181818dd;
     --codebg: #181818ff;
     --codebg: #393939;
-    --linux: rgba(30,100, 30, .5);
+    --linux: rgba(30, 255, 30, .75);
+    --linux-bg: rgba(255, 255, 255, .1);
+    --linux-bg: #11111155;
     /* --navbg: #18181855; */
+    --navheader-bg: #555;
     --navbg2: #00800044;
     --navlines: #444;
     --bs: #3a3a3a;
@@ -20,8 +23,9 @@
     --python-blue1: #4685b9;
     --python-blue2: #3472a3;
     --python-blue3: rgb(0, 80, 195);
+    --python-blue4: rgba(0, 80, 195, .8);
     --python-yellow1: #fcd749;
-    --python-yellow1: #fcc434;
+    --python-yellow2: #fcc434;
     --python-gray: #586a79;
     --grad1: rgba(0,80,195,.01);
     --grad2: rgba(0,80,195,1);
@@ -60,7 +64,26 @@ a {
     color: ghostwhite;
 }
 a:hover {
-    text-shadow: 0 0 2px ghostwhite;
+    color: yellow;
+    text-shadow: 0 0 2px yellow;
+}
+.fa-youtube {
+    color: red;
+    text-shadow: 0 0 2px red;
+}
+.fa-youtube:hover {
+    color: red;
+    text-shadow: 0 0 7px white;
+}
+/* Makes yt link change */
+.fa-youtube + a:hover {
+    color: white;
+    text-shadow: 0 0 10px red;
+}
+/* Makes yt logo and link change */
+.fa-youtube:hover + a {
+    color: white;
+    text-shadow: 0 0 10px red;
 }
 .wrapper {
     width: 80%;
@@ -78,6 +101,7 @@ a:hover {
     justify-content: space-between;
     flex-direction: row;
     overflow: hidden;
+    place-items: center;
     background: linear-gradient(to left,rgba(243, 219, 27, .01), var(--grad2) 10%, rgb(255, 225, 0) 90%,var(--grad1));
 }
 #title h1 {
@@ -88,27 +112,21 @@ a:hover {
     padding: 0;
     width: 100%;
     margin: 0 auto;
-    /* margin-top: 0; */
-    align-items: center;
+    place-items: center;
     border-top: 1px solid gray;
 
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-evenly; */
 }
 #navheader > h2 {
-    margin: 15px auto;
-    padding: 10px;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--python-blue4);
+    border: 1px solid gray;
 }
 #navbar {
-    /* position: absolute; */
-    position: sticky;
-    float: left;
-    top: 0px;
-    left: 1%;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 22%;
-    /* height: 100vh; */
-    margin: -20px;
     padding: 0;
     font-size: 1.1em;
     overflow: hidden;
@@ -167,6 +185,9 @@ a:hover {
     background-color: var(--bg2);
     box-shadow: 1px 1px 5px 3px var(--bs);
 }
+/* .main-section p {
+    text-align: justify;
+} */
 code {
     display: block;
     margin: 30px 20px;
@@ -177,7 +198,31 @@ code {
     font-size: .85em;
 }
 .linux {
-    background-color: var(--linux);
+    color: var(--linux);
+    background-color: var(--linux-bg);
+}
+table {
+    border: 1px solid var(--python-yellow2);
+    place-items: center;
+    margin: auto;
+    padding: 10px;
+}
+th, td {
+    text-align: center;
+}
+td {
+    padding: 5px 10px;
+    border: 1px solid var(--python-blue2);
+
+}
+.quiz {
+    color: yellow;
+}
+.hint {
+    color:rgba(255, 255, 255, .1);
+}
+.hint:hover {
+    color: red;
 }
 
 footer {
@@ -194,11 +239,11 @@ footer a {
     color: var(--python-blue);
 }
 footer a:hover {
-    color: var(--python-blue);
+    /* color: var(--python-blue); */
     /* text-shadow: 0 0 10px 5px green; */
-    -webkit-text-stroke: .5px white;
+    /* -webkit-text-stroke: .5px white; */
 }
-#logo {
+#fcc-logo {
     /* width: max(75px, 10vw); */
     width: 200px;
     background-color: var(--bg2);
@@ -211,40 +256,27 @@ footer a:hover {
 }
 
 
-
-@media (max-width: 1800px) {
-    #navbar {
-        min-width: 28%;
-        margin-left: -100px;
-    }
-}
-
 @media (max-width: 1600px) {
-    #navbar {
-        min-width: 29%;
-        margin-left: -100px;
+    #title,
+    .main-section {
+        margin: inherit auto;
     }
 }
 @media (max-width: 1395px) {
-    #title {
-        background: var(--js-yellow);
-    }
     #logo {
         width: 180px;
     }
-    #navbar {
-        /* min-width: 25%; */
-        /* margin-left: -50px; */
+    #title,
+    .main-section {
+        width: 100%;
+        margin: inherit auto;
     }
-    #navheader h2 {
-        margin: 0;
+    #title {
+        margin-left: 5%;
     }
 }
 
 @media (max-width: 1303px) {
-    #title {
-        height: 160px;
-    }
     #js1 {
         margin-top: 45px;
     }
@@ -252,63 +284,57 @@ footer a:hover {
         width: 50%;
         margin: auto;
     }
-    #navbar {
-        min-width: 30%;
-        margin-left: -100px;
-    }
-    .main-section {
-        /* width: 85%; */
-    }
     #logo {
         width: 200px;
     }
 }
 @media (max-width: 1200px) {
+    #title,
+    header,
     #navbar {
-        position: absolute;
-        float: none;
-        /* min-width: 180px; */
-        padding: 0;
-        margin: 0px auto;
-        min-width: 25%;
         font-size: .9em;
+    }  
+}
+@media (max-width: 1100px) {
+    .main-section {
+        width: 100%;
     }
 }
 @media (max-width: 1000px) {
+    .wrapper {
+        margin-left: 10%;
+        width: 90%;
+    }
     #title {
-        /* display: block; */
-        max-width: 800px;
-        height: 160px;
-    }
-    #navbar {
-        min-width: 25%;
-
-    }
-    .main-section {
-        min-width: 80%;
-        /* margin: 0; */
+        margin: 15px auto;
+        margin-left: 5%;
+        font-size: .8em;
     }
     header {
         width: 85%;
+        font-size: .8em;
+    }
+    #navbar {
+        font-size: .85em;
     }
     #logo {
         width: 180px;
     }
 }
 @media (max-width: 905px) {
-    #title {
-        width: auto;
-        height: 160px;
-        margin: 0;
-        margin-left: 10px;
-        /* margin-left: -22%; */
-        /* min-width: 300px; */
+    .wrapper {
+        margin-left: 15%;
+        width: 95%;
     }
     #navbar {
-        min-width: 25%;
+        font-size: .8em;
     }
 }
 @media (max-width: 830px) {
+    .wrapper {
+        margin-left: 20%;
+        width: 110%;
+    }
     #js1, #js2 {
         display: block;
         margin: auto;
@@ -317,15 +343,17 @@ footer a:hover {
     }
 }
 @media (max-width: 750px) {
-    #title {
-        width: auto;
-        height: 100px;
-        margin-top: 15px;
-        /* margin-left: -170px; */
-        margin-left: -28%;
-        min-width: 300px;
-    }
     .wrapper {
+        margin-left: 25%;
+        width: 110%;
+    }
+    .main-section {
+        width: 100%;
+    }
+    /* #title {
+        margin-left: -80px;
+    } */
+    /* .wrapper {
         position: none;
         width: 100%;
         margin: 0;
@@ -333,65 +361,49 @@ footer a:hover {
         display:flex;
         flex-direction: column;
         flex-wrap: wrap;
-    }
+    } */
     #navheader {
         color: #040404;
         background-color: var(--js-yellow);
     }
-    #navheader h2 {
-        margin: 15px auto;
-    }
-    #navbar {
-        position: relative;
-        /* margin: auto; */
-        /* padding: 0; */
-        min-width: 70%;
-        min-width: 400px;
-    }
-    .main-section {
-        width: 100%;
-        min-width: 50%;
-        margin: 10px auto;
+    /* .main-section {
+        /* width: 100%; */
+        /* min-width: 50%; */
+        /* margin: 10px auto; */
         /* margin: auto; */
         /* margin-left: -188px; */
-        margin-left: -110px;
+        /* margin-left: -110px; */
         /* margin-left: -22%; */
         /* min-width: 550px; */
-    }
+    
     footer {
-        margin-left: -44px;
+        /* margin-left: -44px; */
     }
     #logo {
         width: 180px;
     }
 }
 @media (max-width: 650px) {
-    #title {
-        /* height: 160px; */
-        margin-left: -130px;
-    }
-    .main-section {
-        margin-left: -100px;
+    .wrapper {
+        margin-left: 30%;
+        width: 110%;
     }
 }
 @media (max-width: 550px) {
-    #title {
-        margin-left: -130px;
-    }
-    .main-section {
-        margin-left: -95px;
+    .wrapper {
+        margin-left: 35%;
+        width: 120%;
     }
 }
 @media (max-width: 500px) {
-    .main-section {
-        margin-left: -85px;
+    .wrapper {
+        margin-left: 37.5%;
+        width: 130%;
     }
 }
 @media (max-width: 400px) {
-    #title {
-        margin-left: -70px;
-    }
-    .main-section {
-        margin-left: -70px;
+    .wrapper {
+        margin-left: 40%;
+        width: 140%;
     }
 }
