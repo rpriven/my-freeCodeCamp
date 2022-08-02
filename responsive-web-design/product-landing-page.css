@@ -1,0 +1,210 @@
+:root {
+    --titanium: #e4e4e4;
+    --copper: #b87333;
+    --wroughtiron: #030102;
+    --bg: #0f1313;
+    --bg: #141212;
+    --bg2: #0f0f0f;
+    --blackiron: #060606;
+    --castiron: #15151d;
+    --oilediron: #282c34;
+    --pigiron: #484848;
+    --pigiron2: #696969;
+    --ironrust: #832409;
+    --nicegreen: #65b401;
+    --ancientbrass: #6b5401;
+    --link: #dbe0e0;
+    --navbg: #201e20;
+    --navbg: #131313;
+    --footerbg: #131313;
+    --newsteel: #f4f5f8;
+    --gold: #ffd700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 18px;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: var(--titanium);
+    font-family: 'Arima Madurai', cursive;
+    font-family: 'Gruppo', cursive;
+    background-color: var(--bg);
+}
+header {
+    z-index: 1;
+    background-color: var(--oilediron);
+    background-color: var(--navbg);
+}
+a {
+    color: var(--link);
+}
+a:hover {
+    color: var(--newsteel);
+    text-shadow: 0 0 2.5px var(--newsteel);
+}
+
+
+#logo {
+    /* position: absolute; */
+    margin: 15px;
+    /* float: left; */
+}
+header h1 {
+    color: var(--copper);
+    text-align: center;
+    padding-bottom: 10px;
+    /* float: left; */
+}
+#header {
+    /* height: 10vh; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    place-items: center;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    border-top: 1px solid var(--titanium);
+    border-top: 1px solid var(--pigiron2);
+    border-bottom: 1px solid var(--titanium);
+    border-bottom: 1px solid var(--pigiron2);
+}
+#nav-bar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    font-size: 1.2em;
+    text-align: center;
+    /* border-top: 1px solid var(--titanium);
+    border-top: 1px solid var(--pigiron2);
+    border-bottom: 1px solid var(--titanium);
+    border-bottom: 1px solid var(--pigiron2); */
+}
+#nav-bar ul {
+    list-style-type: none;
+    place-items: center;
+    margin: auto;
+}
+#nav-bar li {
+    display: inline-block;
+    margin: 10px 25px;
+}
+#nav-bar a {
+    color: var(--link);
+    text-decoration: none;
+}
+#nav-bar a:hover {
+    color: var(--newsteel);
+    animation: nav .25s ease-out 0s forwards;
+}
+@keyframes nav {
+    from {
+        border-bottom: 0px solid transparent;
+    }
+    to {
+        text-shadow: 0 0 2.5px var(--newsteel);
+        border-bottom: 2px solid var(--gold);
+    }
+}
+
+.product {
+    text-align: center;
+}
+.product-img {
+    float: left;
+}
+
+
+main {
+    display: flex;
+    margin: auto;
+    padding-bottom: 12vh;
+    /* clear: both; */
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 75%;
+    margin: 20px auto;
+    background-color: var(--bg2);
+    outline: 1px solid var(--ironrust); 
+    outline: 1px solid var(--ancientbrass); 
+}
+section.video {
+    flex-direction: column;
+    position: relative;
+    /* padding-top: 56.25%; */
+}
+video {
+    width: 100%;
+    /* position: absolute; */
+    /* top: 10; */
+}
+video h2 {
+    position: absolute;
+    top: 0;
+}
+.video p {
+    text-align: center;
+}
+section h2,
+section p {
+    margin: 10px;
+}
+section.form {
+    flex-direction: column;
+    text-align: center;
+}
+form {
+    /* outline: 1px solid red; */
+}
+
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    min-height: 10vh;
+    padding-top: 15px;
+    /* padding-bottom: 15px; */
+    z-index: 1;
+    border-top: .5px solid var(--pigiron);
+    color: var(--copper);
+    background-color: var(--footerbg);
+}
+footer a {
+    color: var(--link);
+}
+#fcc-logo {
+    /* width: max(75px, 10vw); */
+    width: 175px;
+    background-color: var(--bg2);
+    aspect-ratio: 35 / 4;
+    display: block;
+    margin: 10px auto;
+    padding: .75rem;
+    box-shadow: 0 0 10px 2px #808080aa;
+    /* box-shadow: 0 0 10px 2px #00800055; */
+}
+
+
+@media {
+
+}
+
+@supports (aspect-ratio: 16/9) {
+    video {
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+}
